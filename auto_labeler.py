@@ -5,7 +5,8 @@ import numpy as np
 
 coordinates_list = []
 windowName = 'Drawing'
-ctr =3904
+ctr =3904 ##starting label
+end= 4060##end label
 low=np.array([0,0,0])
 high=np.array([0,255,255])
 def draw_circle(event, x, y, flags, param):
@@ -87,7 +88,7 @@ cv2.namedWindow("th" , cv2.WINDOW_NORMAL)
 ##cv2.createTrackbar("Hmax", "th" , 0, 180, H)
 ##cv2.createTrackbar("Smax", "th" , 0, 255, S)
 ##cv2.createTrackbar("Vmax", "th" , 0, 255, V)
-while ctr<4060:
+while ctr<end:
     img=cv2.imread("img\\frame_0" + str(ctr)+ ".png")
     cv2.putText(img,"frame "+str(ctr),(0,15),cv2.FONT_HERSHEY_PLAIN,1,(0,255,0),1,cv2.LINE_AA)
     cv2.imshow(windowName, img)
